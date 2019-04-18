@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField] GameObject m_easyPrefab = null;
+    [SerializeField] GameObject m_normalPrefab = null;
+    [SerializeField] GameObject m_hardPrefab = null;
+
     public enum eDifficlty
     {
         INVALID,
@@ -12,7 +16,10 @@ public class GameManager : Singleton<GameManager>
         HARD,
     }
 
+    [HideInInspector]
     public int m_nimsObjects = 0;
+
+    bool playerOnesTurn = true;
 
     public void StartGame(eDifficlty difficulty)
     {
@@ -20,12 +27,15 @@ public class GameManager : Singleton<GameManager>
         {
             case eDifficlty.EASY:
                 m_nimsObjects = 6;
+                //gen things
                 break;
             case eDifficlty.NORMAL:
                 m_nimsObjects = 12;
+                //gen things
                 break;
             case eDifficlty.HARD:
                 m_nimsObjects = 187;
+                //gen things
                 break;
             default:
                 Debug.LogError("INVALID DIFFICULTY");
@@ -36,5 +46,28 @@ public class GameManager : Singleton<GameManager>
     public void ChangeObjectCount(int count)
     {
         m_nimsObjects -= count;
+    }
+
+    public void EndTurn(int count = 0)
+    {
+        if(count > 0) ChangeObjectCount(count);
+        if(m_nimsObjects <= 0)
+        {
+            EndGame();
+            return;
+        }
+        playerOnesTurn = !playerOnesTurn;
+    }
+
+    private void EndGame()
+    {
+        if(playerOnesTurn)
+        {
+            Debug.Log("player one wins...");
+        }
+        else
+        {
+            Debug.Log("PLAYER TWO WINS!!!!");
+        }
     }
 }
