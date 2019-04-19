@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject m_normalPrefab = null;
     [SerializeField] GameObject m_hardPrefab = null;
 
+    public bool inGame = true;
+
     public enum eDifficlty
     {
         INVALID,
