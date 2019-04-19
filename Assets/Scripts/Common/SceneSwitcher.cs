@@ -37,13 +37,13 @@ public class SceneSwitcher : Singleton<SceneSwitcher>
         }
     }
 
-    public void LoadLevel(string level, eSet set = eSet.GAME)
+    public void LoadScene(string level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
 
-    public void LoadLevel(int level, eSet set = eSet.GAME)
+    public void LoadScene(int level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);

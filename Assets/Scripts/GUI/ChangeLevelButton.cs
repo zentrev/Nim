@@ -19,6 +19,6 @@ public class ChangeLevelButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        SceneSwitcher.Instance.LoadLevel(m_nextLevel);
+        SceneSwitcher.Instance.LoadScene(m_nextLevel);
     }
 }

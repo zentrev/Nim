@@ -69,5 +69,7 @@ public class GameManager : Singleton<GameManager>
         {
             Debug.Log("PLAYER TWO WINS!!!!");
         }
+
+        SceneSwitcher.Instance.LoadScene("Main", SceneSwitcher.eSet.MENU);
     }
 }
