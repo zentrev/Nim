@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ScriptableScore : ScriptableObject
 {
-    [SerializeField] int playerwins = 0;
-    [SerializeField] int computerwins = 0;
-    [SerializeField] Dictionary<string, int> scores = null;
+    public int playerwins = 0;
+    public int computerwins = 0;
+    public Dictionary<string, int> scores = null;
 }

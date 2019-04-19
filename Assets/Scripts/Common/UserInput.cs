@@ -15,6 +15,8 @@ public class UserInput : MonoBehaviour
         {
             nim.DeactivateObject();
         }
+        SelectedObjects.Clear();
+        ParentRow = null;
     }
     private void Start()
     {
@@ -28,6 +30,15 @@ public class UserInput : MonoBehaviour
             NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();
             if(nims)
             {
+                if(nims.transform.parent.gameObject != ParentRow)
+                {
+                    for(int i = 0; i < SelectedObjects.Count; i++)
+                    {
+                        NimObject q = SelectedObjects.Dequeue();
+                        q.m_selected = false;
+                    }
+                    ParentRow = nims.transform.parent.gameObject;
+                }
                 SelectedObjects.Enqueue(nims);
                 nims.m_selected = true;
             }
