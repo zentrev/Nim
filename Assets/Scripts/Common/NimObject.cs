@@ -20,6 +20,7 @@ public class NimObject : MonoBehaviour
     {
         //Need to tell the Animator what state we are activating, and what layer it works on
         m_animator.Play("stateName", layer:3);
+        m_selected = false;
         m_active = false;
     }
 }
