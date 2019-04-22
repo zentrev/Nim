@@ -7,7 +7,7 @@ public class UserInput : MonoBehaviour
     [SerializeField] LayerMask m_layerMask = new LayerMask();
     private GameObject ParentRow { get; set; }  = null;
     private Camera m_camera = null;
-    Queue<NimObject> SelectedObjects = new Queue<NimObject>();
+    List<NimObject> SelectedObjects = new List<NimObject>();
 
     public void EndTurn()
     {
@@ -44,18 +44,29 @@ public class UserInput : MonoBehaviour
                     NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();
                     if (nims)
                     {
-                        if (nims.transform.parent.gameObject != ParentRow)
+                        if (SelectedObjects.Contains(nims))
                         {
-                            int objectCount = SelectedObjects.Count;
-                            for (int i = 0; i < objectCount; i++)
-                            {
-                                NimObject q = SelectedObjects.Dequeue();
-                                q.m_selected = false;
-                            }
-                            ParentRow = nims.transform.parent.gameObject;
+                            SelectedObjects.Remove(nims);
+                            nims.m_selected = false;
+                            Debug.Log("DESEELECT");
                         }
-                        if(!SelectedObjects.Contains(nims)) SelectedObjects.Enqueue(nims);
-                        nims.m_selected = true;
+                        else
+                        {
+                            if (nims.transform.parent.gameObject != ParentRow)
+                            {
+                                int objectCount = SelectedObjects.Count - 1;
+
+                                for (int i = objectCount; i >= 0; i--)
+                                {
+                                    NimObject q = SelectedObjects[i];
+                                    SelectedObjects.RemoveAt(i);
+                                    q.m_selected = false;
+                                }
+                                ParentRow = nims.transform.parent.gameObject;
+                            }
+                            if (!SelectedObjects.Contains(nims)) SelectedObjects.Add(nims);
+                            nims.m_selected = true;
+                        }
                     }
                 }
             }
