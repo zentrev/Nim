@@ -26,9 +26,19 @@ public class UserInput : MonoBehaviour
     {
         if (GameManager.Instance.inGame)
         {
-            if(Input.touchCount > 0)
-            { 
-            Ray ray = m_camera.ScreenPointToRay(Input.GetTouch(0).position);
+            if(Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Ray ray = new Ray();
+
+                if (Input.touchCount > 0)
+                {
+                    ray = m_camera.ScreenPointToRay(Input.GetTouch(0).position);
+                }
+                else
+                {
+                    ray = m_camera.ScreenPointToRay(Input.mousePosition);
+                }
+
                 if (Physics.Raycast(ray, out RaycastHit hit, m_layerMask))
                 {
                     NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();

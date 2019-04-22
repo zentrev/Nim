@@ -11,10 +11,7 @@ public class NimObject : MonoBehaviour
 
     private void Update()
     {
-        if(m_selected)
-        {
-            if(m_glow) m_glow.SetActive(true);
-        }
+        if (m_glow) m_glow.SetActive((m_selected) ? true : false);
     }
     public void DeactivateObject()
     {
