@@ -24,23 +24,30 @@ public class UserInput : MonoBehaviour
     }
     private void Update()
     {
-        Ray ray = m_camera.ScreenPointToRay(Input.GetTouch(0).position);
-        if (Physics.Raycast(ray, out RaycastHit hit, m_layerMask))
+        if (GameManager.Instance.inGame)
         {
-            NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();
-            if(nims)
-            {
-                if(nims.transform.parent.gameObject != ParentRow)
+            if(Input.touchCount > 0)
+            { 
+            Ray ray = m_camera.ScreenPointToRay(Input.GetTouch(0).position);
+                if (Physics.Raycast(ray, out RaycastHit hit, m_layerMask))
                 {
-                    for(int i = 0; i < SelectedObjects.Count; i++)
+                    NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();
+                    if (nims)
                     {
-                        NimObject q = SelectedObjects.Dequeue();
-                        q.m_selected = false;
+                        if (nims.transform.parent.gameObject != ParentRow)
+                        {
+                            int objectCount = SelectedObjects.Count;
+                            for (int i = 0; i < objectCount; i++)
+                            {
+                                NimObject q = SelectedObjects.Dequeue();
+                                q.m_selected = false;
+                            }
+                            ParentRow = nims.transform.parent.gameObject;
+                        }
+                        if(!SelectedObjects.Contains(nims)) SelectedObjects.Enqueue(nims);
+                        nims.m_selected = true;
                     }
-                    ParentRow = nims.transform.parent.gameObject;
                 }
-                SelectedObjects.Enqueue(nims);
-                nims.m_selected = true;
             }
         }
     }

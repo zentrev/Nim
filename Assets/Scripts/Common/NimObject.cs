@@ -13,13 +13,13 @@ public class NimObject : MonoBehaviour
     {
         if(m_selected)
         {
-            m_glow.SetActive(true);
+            if(m_glow) m_glow.SetActive(true);
         }
     }
     public void DeactivateObject()
     {
         //Need to tell the Animator what state we are activating, and what layer it works on
-        m_animator.Play("stateName", layer:3);
+        if(m_animator) m_animator.Play("stateName", layer:3);
         m_selected = false;
         m_active = false;
     }
