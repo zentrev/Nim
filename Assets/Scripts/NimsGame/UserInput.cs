@@ -12,13 +12,18 @@ public class UserInput : Singleton<UserInput>
     public void EndTurn()
     {
         int nimCount = SelectedObjects.Count;
-        foreach(NimObject nim in SelectedObjects)
+
+        if (nimCount > 0 || GameManager.Instance.firstTurn)
         {
-            nim.DeactivateObject();
+            foreach (NimObject nim in SelectedObjects)
+            {
+                nim.DeactivateObject();
+            }
+            SelectedObjects.Clear();
+            ParentRow = null;
+            GameManager.Instance.firstTurn = false;
+            GameManager.Instance.EndTurn(nimCount);
         }
-        SelectedObjects.Clear();
-        ParentRow = null;
-        GameManager.Instance.EndTurn(nimCount);
     }
 
     private void Start()

@@ -20,11 +20,12 @@ public class GameManager : Singleton<GameManager>
 
     public int m_nimsObjects = 0;
     public bool inGame = true;
-
+    public bool firstTurn = true;
     bool playerOnesTurn = true;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         StartGame();
     }
 
