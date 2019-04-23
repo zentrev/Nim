@@ -5,5 +5,4 @@ using UnityEngine;
 public abstract class Window : MonoBehaviour
 {
     public bool IsActive;
-    public void Update() { }
 }
