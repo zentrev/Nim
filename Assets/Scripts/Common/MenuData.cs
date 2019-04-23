@@ -20,7 +20,7 @@ public class MenuData : MonoBehaviour
         }
         else
         {
-            m_data.playerTwo = "";
+            m_data.playerTwo = "Nim";
         }
     }
 
