@@ -9,10 +9,12 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] GameObject OptionsMenu = null;
     [SerializeField] GameObject SinglePlayerMenu = null;
     [SerializeField] GameObject MultiplayerPlayerMenu = null;
+    [SerializeField] GameObject MainMenu = null;
 
     public void EnablePlayerSelect()
     {
         PlayerCountMenu.SetActive(true);
+        MainMenu.SetActive(false);
     }
 
     public void EnableMenuOptions()
@@ -51,6 +53,18 @@ public class MenuNavigation : MonoBehaviour
     public void CloseMultiMenu()
     {
         MultiplayerPlayerMenu.SetActive(false);
+        PlayerCountMenu.SetActive(true);
+    }
+
+    public void EnableMainMenu()
+    {
+        MainMenu.SetActive(true);
+        PlayerCountMenu.SetActive(false);
+    }
+
+    public void CloseMainMenu()
+    {
+        MainMenu.SetActive(false);
         PlayerCountMenu.SetActive(true);
     }
 
