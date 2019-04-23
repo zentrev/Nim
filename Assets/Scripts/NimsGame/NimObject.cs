@@ -6,7 +6,7 @@ public class NimObject : MonoBehaviour
 {
     [SerializeField] Animator m_animator = null;
     [SerializeField] GameObject m_glow = null;
-    private bool m_active { get; set; } = true;
+    public bool m_active { get; set; } = true;
     public bool m_selected { get; set; } = false;
 
     private void Update()

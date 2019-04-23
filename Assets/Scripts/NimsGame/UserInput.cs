@@ -11,27 +11,32 @@ public class UserInput : MonoBehaviour
 
     public void EndTurn()
     {
+        int nimCount = SelectedObjects.Count;
         foreach(NimObject nim in SelectedObjects)
         {
             nim.DeactivateObject();
         }
         SelectedObjects.Clear();
         ParentRow = null;
+        GameManager.Instance.EndTurn(nimCount);
     }
+
     private void Start()
     {
         m_camera = Camera.main;
     }
+
     private void Update()
     {
         if (GameManager.Instance.inGame)
         {
-            if(Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Mouse0))
+            if((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Ray ray = new Ray();
 
                 if (Input.touchCount > 0)
                 {
+                    Debug.Log(Input.GetTouch(0).phase);
                     ray = m_camera.ScreenPointToRay(Input.GetTouch(0).position);
                 }
                 else
@@ -44,28 +49,30 @@ public class UserInput : MonoBehaviour
                     NimObject nims = hit.transform.gameObject.GetComponent<NimObject>();
                     if (nims)
                     {
-                        if (SelectedObjects.Contains(nims))
+                        if (nims.m_active)
                         {
-                            SelectedObjects.Remove(nims);
-                            nims.m_selected = false;
-                            Debug.Log("DESEELECT");
-                        }
-                        else
-                        {
-                            if (nims.transform.parent.gameObject != ParentRow)
+                            if (SelectedObjects.Contains(nims))
                             {
-                                int objectCount = SelectedObjects.Count - 1;
-
-                                for (int i = objectCount; i >= 0; i--)
-                                {
-                                    NimObject q = SelectedObjects[i];
-                                    SelectedObjects.RemoveAt(i);
-                                    q.m_selected = false;
-                                }
-                                ParentRow = nims.transform.parent.gameObject;
+                                SelectedObjects.Remove(nims);
+                                nims.m_selected = false;
                             }
-                            if (!SelectedObjects.Contains(nims)) SelectedObjects.Add(nims);
-                            nims.m_selected = true;
+                            else
+                            {
+                                if (nims.transform.parent.gameObject != ParentRow)
+                                {
+                                    int objectCount = SelectedObjects.Count - 1;
+
+                                    for (int i = objectCount; i >= 0; i--)
+                                    {
+                                        NimObject q = SelectedObjects[i];
+                                        SelectedObjects.RemoveAt(i);
+                                        q.m_selected = false;
+                                    }
+                                    ParentRow = nims.transform.parent.gameObject;
+                                }
+                                if (!SelectedObjects.Contains(nims)) SelectedObjects.Add(nims);
+                                nims.m_selected = true;
+                            }
                         }
                     }
                 }
