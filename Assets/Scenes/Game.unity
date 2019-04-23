@@ -1937,7 +1937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistant: 0
-  gameOptions: {fileID: 11400000, guid: d5b3dfad001180e46952ea9f0fe7e51a, type: 2}
+  gameOptions: {fileID: 11400000, guid: 81c3a0860f37e1b40a040961a9d03e38, type: 2}
   m_easyPrefab: {fileID: 0}
   m_normalPrefab: {fileID: 0}
   m_hardPrefab: {fileID: 0}
