@@ -26,24 +26,27 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         Debug.Log("STARTING");
+        GameObject prefab = null;
         switch (gameOptions.Difficulty)
         {
             case eDifficulty.EASY:
                 m_nimsObjects = 6;
-                //gen things
+                prefab = Instantiate(m_easyPrefab);
                 break;
             case eDifficulty.NORMAL:
-                m_nimsObjects = 12;
+                m_nimsObjects = 14;
                 //gen things
                 break;
             case eDifficulty.HARD:
-                m_nimsObjects = 187;
+                m_nimsObjects = 22;
                 //gen things
                 break;
             default:
                 Debug.LogError("INVALID DIFFICULTY");
                 break;
         }
+        prefab.transform.position = Vector3.zero;
+        Debug.Log(gameOptions.playerOne + "'s Turn");
     }
 
     public void ChangeObjectCount(int count)
@@ -53,10 +56,7 @@ public class GameManager : Singleton<GameManager>
 
     public void EndTurn(int count = 0)
     {
-        Debug.Log(m_nimsObjects);
-
         if (count > 0) ChangeObjectCount(count);
-        Debug.Log(m_nimsObjects);
 
         if (m_nimsObjects <= 0)
         {
@@ -64,13 +64,27 @@ public class GameManager : Singleton<GameManager>
             return;
         }
         playerOnesTurn = !playerOnesTurn;
+        if(!playerOnesTurn && gameOptions.playingAI)
+        {
+            inGame = false;
+            //Run AI stuff
+            inGame = true;
+        }
+        Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
     }
 
     private void EndGame()
     {
-        string winner = ((gameOptions.lastPickWins) ? ((playerOnesTurn) ? gameOptions.playerOne : gameOptions.playerTwo) : (playerOnesTurn) ? gameOptions.playerTwo : gameOptions.playerOne);
-        Debug.Log(winner + " Wins!");
+        if (!gameOptions.lastPickWins) playerOnesTurn = !playerOnesTurn;
+        Debug.Log(CurrentPlayer() + " Wins!");
 
         //SceneSwitcher.Instance.LoadScene("Game", SceneSwitcher.eSet.MENU);
     }
+
+    private string CurrentPlayer()
+    {
+        return ((gameOptions.lastPickWins) ? ((playerOnesTurn) ? gameOptions.playerTwo : gameOptions.playerOne) : (playerOnesTurn) ? gameOptions.playerOne : gameOptions.playerTwo);
+    }
+
+    
 }

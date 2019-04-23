@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserInput : MonoBehaviour
+public class UserInput : Singleton<UserInput>
 {
     [SerializeField] LayerMask m_layerMask = new LayerMask();
     private GameObject ParentRow { get; set; }  = null;

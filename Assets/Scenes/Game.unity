@@ -975,6 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df938fa89e2234dbb8eaf605547cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPersistant: 0
   m_layerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -994,9 +995,11 @@ MonoBehaviour:
   gameOptions: {fileID: 11400000, guid: 81c3a0860f37e1b40a040961a9d03e38, type: 2}
   m_easyPrefab: {fileID: 1840136557748978802, guid: 787e6f15a5f250b409780403a4fc5958,
     type: 3}
-  m_normalPrefab: {fileID: 0}
-  m_hardPrefab: {fileID: 0}
-  m_nimsObjects: 12
+  m_normalPrefab: {fileID: 2522916855206635793, guid: b76bad491a36fc641a3ec2206ca41119,
+    type: 3}
+  m_hardPrefab: {fileID: 2522916855206635793, guid: b76bad491a36fc641a3ec2206ca41119,
+    type: 3}
+  m_nimsObjects: 6
   inGame: 1
 --- !u!1001 &1840136557463287064
 PrefabInstance:
@@ -1008,7 +1011,12 @@ PrefabInstance:
     - target: {fileID: 1840136557748978802, guid: 787e6f15a5f250b409780403a4fc5958,
         type: 3}
       propertyPath: m_Name
-      value: NimsGame
+      value: NimsGameEasy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840136557748978802, guid: 787e6f15a5f250b409780403a4fc5958,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1840136557748978805, guid: 787e6f15a5f250b409780403a4fc5958,
         type: 3}
