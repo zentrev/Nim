@@ -52,7 +52,6 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
         prefab.transform.position = Vector3.zero;
-        if (gameOptions.playingAI) AIInput.Instance.GetObjects();
 
         Debug.Log(gameOptions.playerOne + "'s Turn");
     }
@@ -64,6 +63,7 @@ public class GameManager : Singleton<GameManager>
 
     public void EndTurn(int count = 0)
     {
+        AIInput.Instance.GetObjects();
         if (count > 0) ChangeObjectCount(count);
 
         if (m_nimsObjects <= 0)
