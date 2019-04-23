@@ -20,27 +20,32 @@ public class MenuData : MonoBehaviour
         }
         else
         {
-            m_data.playerTwo = null;
+            m_data.playerTwo = "";
         }
     }
 
     public void SetDiff(int difficulty)
     {
+        Debug.Log(difficulty);
         switch (difficulty)
         {
             case 1:
+                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.EASY;
                 break;
             case 2:
+                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.NORMAL;
                 break;
             case 3:
+                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.HARD;
                 break;
             default:
                 m_data.Difficulty = GameManager.eDifficulty.INVALID;
                 break;
         }
+        Debug.Log(m_data.Difficulty);
     }
 
     public void SetWin(bool IsLastWin)
