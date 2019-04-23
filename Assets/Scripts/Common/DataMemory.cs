@@ -19,10 +19,14 @@ public class DataMemory : MonoBehaviour
 
     private void OnEnable()
     {
-        if(Player1 != null)
+        if(Player1.ToString() != "")
         {
             Player1Preview.text = "";
             Player1.text = data.playerOne.ToString();
+        }
+        else
+        {
+            Player1Preview.text = "PlayerOne Name";
         }
         if(Player2 != null)
         {
