@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082368e328bff1845a2cae283873ca34, type: 3}
   m_Name: GameOptions
   m_EditorClassIdentifier: 
-  Difficulty: 1
+  Difficulty: 3
   playerOne: Player One
   playerTwo: Player Two
   playingAI: 0
