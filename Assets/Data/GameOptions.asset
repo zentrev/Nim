@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameOptions
   m_EditorClassIdentifier: 
   Difficulty: 3
-  playerOne: "Fish\u200B"
-  playerTwo: "Bob\u200B"
+  playerOne: 
+  playerTwo: 
   playingAI: 0
   lastPickWins: 0
