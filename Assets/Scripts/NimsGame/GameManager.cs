@@ -51,6 +51,8 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
         prefab.transform.position = Vector3.zero;
+        if (gameOptions.playingAI) AIInput.Instance.GetObjects();
+
         Debug.Log(gameOptions.playerOne + "'s Turn");
     }
 
@@ -72,10 +74,14 @@ public class GameManager : Singleton<GameManager>
         if(!playerOnesTurn && gameOptions.playingAI)
         {
             inGame = false;
-            //Run AI stuff
+            Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
+            AIInput.Instance.AITurn(eDifficulty.EASY);
             inGame = true;
         }
-        Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
+        else
+        {
+            Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
+        }
     }
 
     private void EndGame()

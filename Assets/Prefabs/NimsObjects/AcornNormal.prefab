@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2522916855206635798}
   m_Layer: 0
-  m_Name: NimsGameNormal
+  m_Name: AcornNormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2522916855242203376}
   m_Layer: 0
   m_Name: NimsRow (1)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2522916856114102531}
   m_Layer: 0
   m_Name: NimsRow
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 8701514862742854410}
   m_Layer: 0
   m_Name: NimsRow (2)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
