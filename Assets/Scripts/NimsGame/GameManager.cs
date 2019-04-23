@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     public bool firstTurn = true;
     bool playerOnesTurn = true;
 
-    private override void Awake()
+    public override void Awake()
     {
         base.Awake();
         StartGame();
