@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 29733816100304528}
   m_Layer: 0
   m_Name: NimsRow
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 29733816940666501}
   m_Layer: 0
-  m_Name: NimsGameHard
+  m_Name: AcornHard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 29733816972203875}
   m_Layer: 0
   m_Name: NimsRow (1)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1335459025638782872}
   m_Layer: 0
   m_Name: NimsRow (2)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1335459027142720790}
   m_Layer: 0
   m_Name: NimsRow (3)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

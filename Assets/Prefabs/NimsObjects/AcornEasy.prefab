@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1840136557369994336}
   m_Layer: 0
   m_Name: NimsRow
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_LocalPosition: {x: -1.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1840136557326329113}
   - {fileID: 3283295211417461588}
   - {fileID: 3283295211186387647}
+  - {fileID: 1840136557326329113}
   m_Father: {fileID: 1840136557748978805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1840136557705022867}
   m_Layer: 0
   m_Name: NimsRow (1)
-  m_TagString: Untagged
+  m_TagString: NimsRow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840136557748978805}
   m_Layer: 0
-  m_Name: NimsGame
+  m_Name: AcornEasy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
@@ -588,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3754280161637811749, guid: 610d03b5f5d33d4429494de3dd96a3ec,
         type: 3}
