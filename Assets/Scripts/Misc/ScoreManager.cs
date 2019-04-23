@@ -7,25 +7,35 @@ using UnityEngine;
 public class ScoreManager : Window
 {
     [SerializeField] ScriptableScore scores = null;
-    [SerializeField] TextMeshPro playerscore = null;
-    [SerializeField] TextMeshPro computerscore = null;
-    [SerializeField] GameObject playerScoresParent = null;
-    [SerializeField] GameObject playerScoresTemplate = null;
+    [SerializeField] TextMeshProUGUI playerscore = null;
+    [SerializeField] TextMeshProUGUI computerscore = null;
+    [SerializeField] TextMeshProUGUI playerNames = null;
+    [SerializeField] TextMeshProUGUI playerWins = null;
+    [SerializeField] GameObject panel = null;
 
     void Update()
     {
-        playerScoresParent.GetComponentInChildren<ScoreTemplate>();
-        playerscore.text = scores.playerwins.ToString();
-        computerscore.text = scores.computerwins.ToString();
-        foreach(KeyValuePair<string, int> score in scores.scores)
+        if (IsActive)
         {
-            GameObject temp = Instantiate(playerScoresTemplate, playerScoresParent.transform);
-            ScoreTemplate loadscore = temp.GetComponent<ScoreTemplate>();
-            if (loadscore)
+            panel.SetActive(true);
+            playerscore.text = scores.playerwins.ToString();
+            computerscore.text = scores.computerwins.ToString();
+
+            string playernames = "";
+            string playerwins = "";
+            foreach (KeyValuePair<string, int> score in scores.scores)
             {
-                loadscore.player = score.Key;
-                loadscore.wins = score.Value;
+                playernames += score.Key;
+                playernames += "/n";
+
+                playerwins += score.Value.ToString();
+                playerwins += "/n";
             }
+            playerNames.text = playernames;
+            playerWins.text = playerwins;
+        } else
+        {
+            panel.SetActive(false);
         }
     }
 

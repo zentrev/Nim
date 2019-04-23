@@ -6,7 +6,7 @@ public class NimObject : MonoBehaviour
 {
     [SerializeField] Animator m_animator = null;
     [SerializeField] GameObject m_glow = null;
-    private bool m_active { get; set; } = true;
+    public bool m_active { get; set; } = true;
     public bool m_selected { get; set; } = false;
 
     private void Update()
@@ -15,8 +15,7 @@ public class NimObject : MonoBehaviour
     }
     public void DeactivateObject()
     {
-        //Need to tell the Animator what state we are activating, and what layer it works on
-        if(m_animator) m_animator.Play("stateName", layer:3);
+        if(m_animator) m_animator.SetTrigger("Deselect");
         m_selected = false;
         m_active = false;
     }
