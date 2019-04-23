@@ -15,8 +15,7 @@ public class NimObject : MonoBehaviour
     }
     public void DeactivateObject()
     {
-        //Need to tell the Animator what state we are activating, and what layer it works on
-        if(m_animator) m_animator.Play("stateName", layer:3);
+        if(m_animator) m_animator.SetTrigger("Deselect");
         m_selected = false;
         m_active = false;
     }
