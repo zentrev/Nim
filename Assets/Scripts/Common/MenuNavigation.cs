@@ -54,8 +54,4 @@ public class MenuNavigation : MonoBehaviour
         PlayerCountMenu.SetActive(true);
     }
 
-    public void StartGame()
-    {
-
-    }
 }
