@@ -23,6 +23,11 @@ public class GameManager : Singleton<GameManager>
 
     bool playerOnesTurn = true;
 
+    private void Start()
+    {
+        StartGame();
+    }
+
     public void StartGame()
     {
         Debug.Log("STARTING");
@@ -35,11 +40,11 @@ public class GameManager : Singleton<GameManager>
                 break;
             case eDifficulty.NORMAL:
                 m_nimsObjects = 14;
-                //gen things
+                prefab = Instantiate(m_normalPrefab);
                 break;
             case eDifficulty.HARD:
                 m_nimsObjects = 22;
-                //gen things
+                prefab = Instantiate(m_hardPrefab);
                 break;
             default:
                 Debug.LogError("INVALID DIFFICULTY");
