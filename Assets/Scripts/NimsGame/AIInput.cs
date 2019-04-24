@@ -84,8 +84,6 @@ public class AIInput : Singleton<AIInput>
                 break;
             case GameManager.eDifficulty.HARD:
 
-
-
                 break;
             default:
                 Debug.LogError("Invalid difficulty");
