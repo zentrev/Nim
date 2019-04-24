@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuNavigation : MonoBehaviour
 {
     [SerializeField] GameObject PlayerCountMenu = null;
-    [SerializeField] GameObject OptionsMenu = null;
     [SerializeField] GameObject SinglePlayerMenu = null;
     [SerializeField] GameObject MultiplayerPlayerMenu = null;
     [SerializeField] GameObject MainMenu = null;
@@ -15,16 +14,6 @@ public class MenuNavigation : MonoBehaviour
     {
         PlayerCountMenu.SetActive(true);
         MainMenu.SetActive(false);
-    }
-
-    public void EnableMenuOptions()
-    {
-        OptionsMenu.SetActive(true);
-    }
-
-    public void CloseMenuOptions()
-    {
-        OptionsMenu.SetActive(false);
     }
 
     public void Exit()

@@ -20,7 +20,7 @@ public class MenuData : MonoBehaviour
         }
         else
         {
-            m_data.playerTwo = "";
+            m_data.playerTwo = "Nim";
         }
     }
 
@@ -30,15 +30,12 @@ public class MenuData : MonoBehaviour
         switch (difficulty)
         {
             case 1:
-                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.EASY;
                 break;
             case 2:
-                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.NORMAL;
                 break;
             case 3:
-                Debug.Log("Made it! :D \\o/");
                 m_data.Difficulty = GameManager.eDifficulty.HARD;
                 break;
             default:
