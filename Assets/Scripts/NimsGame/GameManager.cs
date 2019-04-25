@@ -90,7 +90,7 @@ public class GameManager : Singleton<GameManager>
         if (!gameOptions.lastPickWins) playerOnesTurn = !playerOnesTurn;
         Debug.Log(CurrentPlayer() + " Wins!");
 
-        //SceneSwitcher.Instance.LoadScene("Game", SceneSwitcher.eSet.MENU);
+        SceneSwitcher.Instance.LoadScene("Game", SceneSwitcher.eSet.MENU);
     }
 
     private string CurrentPlayer()
