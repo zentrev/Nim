@@ -8,7 +8,7 @@ public class Options : Window
 
     public void MuteMusic()
     {
-        //AudioManager.Instance.GetComponent.
+        //AudioManager.Instance.
     }
 
     public void MuteSFX()

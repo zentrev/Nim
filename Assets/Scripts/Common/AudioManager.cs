@@ -5,6 +5,9 @@ using System;
 public class AudioManager : Singleton<AudioManager>
 {
 	[SerializeField] Sound[] m_sounds = null;
+    [SerializeField] AudioMixerGroup m_music = null;
+    [SerializeField] AudioMixerGroup m_sfx = null;
+
 
 	public override void Awake()
 	{
@@ -28,4 +31,30 @@ public class AudioManager : Singleton<AudioManager>
 			sound.audioSource.Play();
 		}
 	}
+
+    public void MuteMusic()
+    {
+        m_music.audioMixer.GetFloat("Music", out float current);
+        if(current == 0)
+        {
+            m_music.audioMixer.SetFloat("Music", 100);
+        }
+        else if(current == 100)
+        {
+            m_music.audioMixer.SetFloat("Music", 0);
+        }
+    }
+
+    public void MuteSFX()
+    {
+        m_sfx.audioMixer.GetFloat("SoundFX", out float current);
+        if (current == 0)
+        {
+            m_sfx.audioMixer.SetFloat("SoundFX", 100);
+        }
+        else if (current == 100)
+        {
+            m_sfx.audioMixer.SetFloat("SoundFX", 0);
+        }
+    }
 }
