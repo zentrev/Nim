@@ -8,11 +8,11 @@ public class Options : Window
 
     public void MuteMusic()
     {
-        //AudioManager.Instance.
+        AudioManager.Instance.MuteMusic();
     }
 
     public void MuteSFX()
     {
-        //AudioManager.Instance.GetComponent.
+        AudioManager.Instance.MuteSFX();
     }
 }
