@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,14 +55,14 @@ public class AIInput : Singleton<AIInput>
 
         int selectionCount = 0;
 
-        switch (difficutly)
+        switch (GameManager.eDifficulty.HARD)
         {
             case GameManager.eDifficulty.EASY:
 
                 bool vaildMove = false;
                 while(!vaildMove)
                 {
-                    int ran = Random.Range(0, rows.Count);
+                    int ran = UnityEngine.Random.Range(0, rows.Count);
                     if (rows[ran].activeCount > 0)
                     {
                         foreach(NimObject nim in rows[ran].nims)
@@ -83,7 +84,89 @@ public class AIInput : Singleton<AIInput>
             case GameManager.eDifficulty.NORMAL:
                 break;
             case GameManager.eDifficulty.HARD:
+                BitArray[] bitRows = new BitArray[rows.Count];
+                bool validMove = false;
+                for(int currentRow = 0; currentRow < rows.Count; currentRow++)
+                {
+                    for (int i = 0; i < rows[currentRow].GetActiveNimCount(); i++)
+                    {
+                        if (!validMove)
+                        {
+                            for (int j = 0; j < rows.Count; j++)
+                            {
+                                if (j == currentRow)
+                                {
+                                    bitRows[j] = new BitArray(BitConverter.GetBytes(i));
+                                }
+                                else
+                                {
+                                    bitRows[j] = new BitArray(BitConverter.GetBytes(rows[j].GetActiveNimCount()));
+                                }
+                            }
 
+                            //debug
+                            foreach (BitArray bits in bitRows)
+                            {
+                                string outS = "";
+                                for (int q = 0; q < bits.Length; q++)
+                                {
+                                    outS += (bits[q]) ? "1" : "0";
+                                }
+                                Debug.Log(outS);
+                            }
+
+
+                            int longestRow = 0;
+                            for (int j = 0; j < bitRows.Length; j++)
+                            {
+                                if (bitRows[j].Length > longestRow) longestRow = bitRows[j].Length;
+                            }
+
+                            bool winningMove = true;
+                            for (int j = 0; j < longestRow; j++)
+                            {
+                                int addative = 0;
+                                for (int k = 0; k < bitRows.Length; k++)
+                                {
+                                    if (bitRows[k].Length >= j)
+                                    {
+                                        if (bitRows[k][j]) addative++;
+                                    }
+                                }
+                                if (addative % 2 != 0)
+                                {
+                                    winningMove = false;
+                                }
+                                else
+                                {
+                                    Debug.Log(addative);
+                                }
+                            }
+
+                            if (winningMove)
+                            {
+                                Debug.Log("This: " + (rows[currentRow].activeCount - i));
+                                int selected = 0;
+                                for (int n = 0; n < rows[currentRow].activeCount; n++)
+                                {
+                                    if (rows[currentRow].nims[n].m_active && selected < rows[currentRow].activeCount - i)
+                                    {
+                                        rows[currentRow].nims[n].DeactivateObject();
+                                        selectionCount++;
+                                        selected++;
+                                        if (selected == rows[currentRow].activeCount - i)
+                                        {
+                                            vaildMove = true;
+                                            GameManager.Instance.EndTurn(selectionCount);
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Debug.Log("We Failed");
                 break;
             default:
                 Debug.LogError("Invalid difficulty");
