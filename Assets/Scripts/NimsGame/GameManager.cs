@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -17,6 +18,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject m_easyPrefab = null;
     [SerializeField] GameObject m_normalPrefab = null;
     [SerializeField] GameObject m_hardPrefab = null;
+
+    [SerializeField] Window m_winWindow = null;
+    [SerializeField] TextMeshProUGUI m_winText = null;
 
     public int m_nimsObjects = 0;
     public bool inGame = true;
@@ -90,7 +94,9 @@ public class GameManager : Singleton<GameManager>
         if (!gameOptions.lastPickWins) playerOnesTurn = !playerOnesTurn;
         Debug.Log(CurrentPlayer() + " Wins!");
 
-        SceneSwitcher.Instance.LoadScene("Game", SceneSwitcher.eSet.MENU);
+        m_winText.text = (CurrentPlayer() + " Wins!");
+        WindowManager.Instance.AddWindow(m_winWindow);
+        //SceneSwitcher.Instance.LoadScene("Game", SceneSwitcher.eSet.MENU);
     }
 
     private string CurrentPlayer()
