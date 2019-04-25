@@ -9,19 +9,36 @@ public class MenuData : MonoBehaviour
 
     public void SetPlayer1(TextMeshProUGUI name)
     {
-        m_data.playerOne = name.text;
+        if(m_data.playerOne != "")
+        {
+            if(name.text != "" && name.text != null)
+            {
+                m_data.playerOne = name.text;
+            }
+        }
+        else
+        {
+            m_data.playerOne = "Player One";
+            name.text = m_data.playerOne;
+        }
     }
 
     public void SetPlayer2(TextMeshProUGUI name)
     {
-        if(name != null)
+        if(name.text != "" && name.text != null && m_data.playerTwo != "")
         {
             m_data.playerTwo = name.text;
         }
         else
         {
-            m_data.playerTwo = "Nim";
+            m_data.playerTwo = "Player Two";
         }
+        
+    }
+
+    public void SetPlayer2AI()
+    {
+        m_data.playerTwo = "Nim";
     }
 
     public void SetDiff(int difficulty)
