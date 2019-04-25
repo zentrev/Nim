@@ -18,17 +18,16 @@ public class DataMemory : MonoBehaviour
     private void OnEnable()
     {
         //if(Player1Preview.text != "" && Player1Preview.text != null)
-        if(data.playerOne != "" && data.playerOne != null)
+        if(data.playerOne.Length > 1)
         {
-            Debug.Log("test " + data.playerOne);
-            Player1Preview.text = data.playerOne;
+            Player1Preview.SetText(data.playerOne);
         }
 
         if (Player2Preview != null)
         {
-            if (data.playerTwo != "")
+            if (data.playerTwo.Length > 1)
             {
-                Player2Preview.text = data.playerTwo;
+                Player2Preview.SetText(data.playerTwo);
             }
         }
 

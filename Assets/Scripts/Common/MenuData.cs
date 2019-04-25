@@ -9,29 +9,28 @@ public class MenuData : MonoBehaviour
 
     public void SetPlayer1(TextMeshProUGUI name)
     {
-        if(m_data.playerOne != "")
+        if (name.text.Length > 1)
         {
-            if(name.text != "" && name.text != null)
-            {
-                m_data.playerOne = name.text;
-            }
+            m_data.playerOne = " " + name.text;
         }
-        else
+        if(m_data.playerOne == "" || m_data.playerOne == null || m_data.playerOne.Length == 1)
         {
-            m_data.playerOne = "Player One";
-            name.text = m_data.playerOne;
+            m_data.playerOne = " Player One";
+            name.SetText(m_data.playerOne);
         }
+        
     }
 
     public void SetPlayer2(TextMeshProUGUI name)
     {
-        if(name.text != "" && name.text != null && m_data.playerTwo != "")
+        if(name.text.Length > 1)
         {
-            m_data.playerTwo = name.text;
+            m_data.playerTwo = " " + name.text;
         }
-        else
+        if (m_data.playerTwo == "" || m_data.playerTwo == null || m_data.playerTwo.Length == 1)
         {
-            m_data.playerTwo = "Player Two";
+            m_data.playerTwo = " Player Two";
+            name.SetText(m_data.playerOne);
         }
         
     }
