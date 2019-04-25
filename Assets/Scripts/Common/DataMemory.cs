@@ -7,8 +7,6 @@ using TMPro;
 public class DataMemory : MonoBehaviour
 {
     [SerializeField] GameOptions data = null;
-    [SerializeField] TextMeshProUGUI Player1 = null;
-    [SerializeField] TextMeshProUGUI Player2 = null;
     [SerializeField] TextMeshProUGUI Player1Preview = null;
     [SerializeField] TextMeshProUGUI Player2Preview = null;
     [SerializeField] Toggle Easy = null;
@@ -19,14 +17,21 @@ public class DataMemory : MonoBehaviour
 
     private void OnEnable()
     {
-
-        Player1.text = data.playerOne;
-        //Player1Preview.text = data.playerOne;
-
-        if (Player2 != null)
+        //if(Player1Preview.text != "" && Player1Preview.text != null)
+        if(data.playerOne != "" && data.playerOne != null)
         {
-            Player2.text = data.playerTwo;
+            Debug.Log("test " + data.playerOne);
+            Player1Preview.text = data.playerOne;
         }
+
+        if (Player2Preview != null)
+        {
+            if (data.playerTwo != "")
+            {
+                Player2Preview.text = data.playerTwo;
+            }
+        }
+
         if(data.Difficulty == GameManager.eDifficulty.EASY)
         {
             Easy.isOn = true;
