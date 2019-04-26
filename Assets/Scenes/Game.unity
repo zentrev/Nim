@@ -420,9 +420,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: c325277473b991b4897c69207b501821, type: 3}
     audioMixerGroup: {fileID: 5332762678901580449, guid: 329e919f4cae2bf4a8d601f889e16961,
       type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 0
     loop: 0
+    playing: 1
     audioSource: {fileID: 0}
   m_music: {fileID: 0}
   m_sfx: {fileID: 0}
