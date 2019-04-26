@@ -58,11 +58,13 @@ public class AudioManager : Singleton<AudioManager>
                 if(m_sounds[i].volume == 0)
                 {
                     m_sounds[i].volume = 1;
+                    m_sounds[i].audioSource.UnPause();
                     Debug.Log("vol set to 1");
                 }
                 else
                 {
                     m_sounds[i].volume = 0;
+                    m_sounds[i].audioSource.Pause();
                     Debug.Log("vol set to 0");
                 }
             }
