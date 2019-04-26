@@ -21,6 +21,7 @@ public class AudioManager : Singleton<AudioManager>
 			sound.audioSource.pitch = sound.pitch;
 			sound.audioSource.loop = sound.loop;
 		}
+        Play("Music");
 	}
 
 	public void Play(string name)
@@ -57,7 +58,7 @@ public class AudioManager : Singleton<AudioManager>
                 if(m_sounds[i].volume == 0)
                 {
                     m_sounds[i].volume = 1;
-                    Debug.Log("vol set to 100");
+                    Debug.Log("vol set to 1");
                 }
                 else
                 {
