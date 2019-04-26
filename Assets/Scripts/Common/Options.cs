@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Options : Window
 {
-    [SerializeField] AudioManager m_audioManager = null;
-
-    public void MuteMusic()
+    public void ToggleMusic()
     {
-        AudioManager.Instance.MuteMusic();
+        AudioManager.Instance.ToggleMusic();
     }
 
-    public void MuteSFX()
+    public void ToggleSFX()
     {
-        AudioManager.Instance.MuteSFX();
+        AudioManager.Instance.ToggleSFX();
     }
 }
