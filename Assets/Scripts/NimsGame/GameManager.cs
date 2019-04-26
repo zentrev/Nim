@@ -72,15 +72,19 @@ public class GameManager : Singleton<GameManager>
 
         if (m_nimsObjects <= 0)
         {
+            Debug.Log(playerOnesTurn);
+
             EndGame();
+            Debug.Log(playerOnesTurn);
             return;
         }
+
         playerOnesTurn = !playerOnesTurn;
         if(!playerOnesTurn && gameOptions.playingAI)
         {
             inGame = false;
             Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
-            AIInput.Instance.AITurn(eDifficulty.EASY);
+            AIInput.Instance.AITurn(eDifficulty.EASY, gameOptions.lastPickWins);
             inGame = true;
         }
         else
@@ -101,7 +105,7 @@ public class GameManager : Singleton<GameManager>
 
     private string CurrentPlayer()
     {
-        return ((gameOptions.lastPickWins) ? ((playerOnesTurn) ? gameOptions.playerTwo : gameOptions.playerOne) : (playerOnesTurn) ? gameOptions.playerOne : gameOptions.playerTwo);
+        return (playerOnesTurn) ? gameOptions.playerOne : gameOptions.playerTwo;
     }
 
     
