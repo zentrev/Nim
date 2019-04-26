@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ba272b652dabe409aa6536ab2aca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPersistant: 1
+  isPersistant: 0
   m_sounds:
   - name: Music
     audioClip: {fileID: 8300000, guid: 3326286718da3324a9ae9c84f5ca0028, type: 3}
