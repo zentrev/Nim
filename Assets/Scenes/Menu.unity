@@ -2864,13 +2864,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ba272b652dabe409aa6536ab2aca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPersistant: 0
+  isPersistant: 1
   m_sounds:
   - name: Music
     audioClip: {fileID: 8300000, guid: 3326286718da3324a9ae9c84f5ca0028, type: 3}
     audioMixerGroup: {fileID: 5151290175054962871, guid: 329e919f4cae2bf4a8d601f889e16961,
       type: 2}
-    volume: 1
+    volume: 0.5
     pitch: 1.87
     loop: 1
     audioSource: {fileID: 0}
@@ -4870,7 +4870,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0, b: 0.92892265, a: 0}
+  m_BackGroundColor: {r: 0.19607845, g: 0.41960788, b: 0.25490198, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
