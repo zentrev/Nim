@@ -26,40 +26,78 @@ public class AudioManager : Singleton<AudioManager>
 	public void Play(string name)
 	{
 		Sound sound = Array.Find(m_sounds, s => s.name == name);
-		if (sound != null)
-		{
-			sound.audioSource.Play();
-		}
+        if (sound.volume == 1)
+        {
+            if (sound != null)
+            {
+                sound.audioSource.Play();
+            }
+        }
 	}
 
     public void ToggleMusic()
     {
-        m_music.audioMixer.GetFloat("Music", out float current);
-        Debug.Log(current);
-        if(current == 0)
+        //m_music.audioMixer.GetFloat("Music", out float current);
+        //Debug.Log(current);
+        //if(current == 0)
+        //{
+        //    m_music.audioMixer.SetFloat("Music", 100);
+        //    Debug.Log("music at 100");
+        //}
+        //else if(current == 100)
+        //{
+        //    m_music.audioMixer.SetFloat("Music", 0);
+        //    Debug.Log("music at 0");
+        //}
+
+        for(int i = 0; i < m_sounds.Length; i++)
         {
-            m_music.audioMixer.SetFloat("Music", 100);
-            Debug.Log("music at 100");
+            if(m_sounds[i].name == "Music")
+            {
+                if(m_sounds[i].volume == 0)
+                {
+                    m_sounds[i].volume = 1;
+                    Debug.Log("vol set to 100");
+                }
+                else
+                {
+                    m_sounds[i].volume = 0;
+                    Debug.Log("vol set to 0");
+                }
+            }
         }
-        else if(current == 100)
-        {
-            m_music.audioMixer.SetFloat("Music", 0);
-            Debug.Log("music at 0");
-        }
+
     }
 
     public void ToggleSFX()
     {
-        m_sfx.audioMixer.GetFloat("SoundFX", out float current);
-        if (current == 0)
+        //m_sfx.audioMixer.GetFloat("SoundFX", out float current);
+        //if (current == 0)
+        //{
+        //    m_sfx.audioMixer.SetFloat("SoundFX", 100);
+        //    Debug.Log("SFX at 100");
+        //}
+        //else if (current == 100)
+        //{
+        //    m_sfx.audioMixer.SetFloat("SoundFX", 0);
+        //    Debug.Log("SFX at 0");
+        //}
+
+        for (int i = 0; i < m_sounds.Length; i++)
         {
-            m_sfx.audioMixer.SetFloat("SoundFX", 100);
-            Debug.Log("SFX at 100");
-        }
-        else if (current == 100)
-        {
-            m_sfx.audioMixer.SetFloat("SoundFX", 0);
-            Debug.Log("SFX at 0");
+            if (m_sounds[i].name == "SoundFX")
+            {
+                if (m_sounds[i].volume == 0)
+                {
+                    m_sounds[i].volume = 1;
+                    Debug.Log("sfx set to 100");
+                }
+                else
+                {
+                    m_sounds[i].volume = 0;
+                    Debug.Log("sfx set to 0");
+                }
+            }
         }
     }
 }
