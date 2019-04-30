@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AcornDeselect
+  m_Name: AcornDeselect2
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 2100000, guid: a12b4b347b32293418c31d5d1e0ceb98, type: 2}
     - time: 0.083333336
-      value: {fileID: 2100000, guid: 8b4238b3a78cf02428dbfc8c99644b0d, type: 2}
+      value: {fileID: 2100000, guid: 16828893e30038143b335c1f97ba381e, type: 2}
     attribute: m_Materials.Array.data[0]
     path: 
     classID: 23
@@ -43,7 +43,7 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 2100000, guid: a12b4b347b32293418c31d5d1e0ceb98, type: 2}
-    - {fileID: 2100000, guid: 8b4238b3a78cf02428dbfc8c99644b0d, type: 2}
+    - {fileID: 2100000, guid: 16828893e30038143b335c1f97ba381e, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

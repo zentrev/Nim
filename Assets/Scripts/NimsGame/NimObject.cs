@@ -15,7 +15,9 @@ public class NimObject : MonoBehaviour
     }
     public void DeactivateObject()
     {
-        if(m_animator) m_animator.SetTrigger("Deselect");
+        if (GameManager.Instance.PlayerOnesTurn)
+        { m_animator.SetTrigger("Deselect1"); }
+        else { m_animator.SetTrigger("Deselect2"); }
         m_selected = false;
         m_active = false;
     }

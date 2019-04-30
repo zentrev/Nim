@@ -27,6 +27,9 @@ public class GameManager : Singleton<GameManager>
     public bool firstTurn = true;
     bool playerOnesTurn = true;
 
+    public GameOptions GameOptions { get => gameOptions; set => gameOptions = value; }
+    public bool PlayerOnesTurn { get => playerOnesTurn; set => playerOnesTurn = value; }
+
     public override void Awake()
     {
         base.Awake();
@@ -37,7 +40,7 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("STARTING");
         GameObject prefab = null;
-        switch (gameOptions.Difficulty)
+        switch (GameOptions.Difficulty)
         {
             case eDifficulty.EASY:
                 m_nimsObjects = 6;
@@ -57,7 +60,7 @@ public class GameManager : Singleton<GameManager>
         }
         prefab.transform.position = Vector3.zero;
 
-        Debug.Log(gameOptions.playerOne + "'s Turn");
+        Debug.Log(GameOptions.playerOne + "'s Turn");
     }
 
     public void ChangeObjectCount(int count)
@@ -72,19 +75,19 @@ public class GameManager : Singleton<GameManager>
 
         if (m_nimsObjects <= 0)
         {
-            Debug.Log(playerOnesTurn);
+            Debug.Log(PlayerOnesTurn);
 
             EndGame();
-            Debug.Log(playerOnesTurn);
+            Debug.Log(PlayerOnesTurn);
             return;
         }
 
-        playerOnesTurn = !playerOnesTurn;
-        if(!playerOnesTurn && gameOptions.playingAI)
+        PlayerOnesTurn = !PlayerOnesTurn;
+        if(!PlayerOnesTurn && GameOptions.playingAI)
         {
             inGame = false;
             Debug.Log(CurrentPlayer() + "'s Turn! " + m_nimsObjects + " Objects Left!");
-            AIInput.Instance.AITurn(eDifficulty.EASY, gameOptions.lastPickWins);
+            AIInput.Instance.AITurn(eDifficulty.EASY, GameOptions.lastPickWins);
             inGame = true;
         }
         else
@@ -95,7 +98,7 @@ public class GameManager : Singleton<GameManager>
 
     private void EndGame()
     {
-        if (!gameOptions.lastPickWins) playerOnesTurn = !playerOnesTurn;
+        if (!GameOptions.lastPickWins) PlayerOnesTurn = !PlayerOnesTurn;
         Debug.Log(CurrentPlayer() + " Wins!");
 
         m_winText.text = (CurrentPlayer() + " Wins!");
@@ -105,7 +108,7 @@ public class GameManager : Singleton<GameManager>
 
     private string CurrentPlayer()
     {
-        return (playerOnesTurn) ? gameOptions.playerOne : gameOptions.playerTwo;
+        return (PlayerOnesTurn) ? GameOptions.playerOne : GameOptions.playerTwo;
     }
 
     

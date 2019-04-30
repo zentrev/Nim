@@ -27,7 +27,7 @@ public class AudioManager : Singleton<AudioManager>
 	public void Play(string name)
 	{
 		Sound sound = Array.Find(m_sounds, s => s.name == name);
-        if (sound.volume == 1)
+        if (sound.playing == true)
         {
             if (sound != null)
             {
@@ -55,15 +55,15 @@ public class AudioManager : Singleton<AudioManager>
         {
             if(m_sounds[i].name == "Music")
             {
-                if(m_sounds[i].volume == 0)
+                if(m_sounds[i].playing == false)
                 {
-                    m_sounds[i].volume = 1;
+                    m_sounds[i].playing = true;
                     m_sounds[i].audioSource.UnPause();
                     Debug.Log("vol set to 1");
                 }
                 else
                 {
-                    m_sounds[i].volume = 0;
+                    m_sounds[i].playing = false;
                     m_sounds[i].audioSource.Pause();
                     Debug.Log("vol set to 0");
                 }
@@ -90,14 +90,14 @@ public class AudioManager : Singleton<AudioManager>
         {
             if (m_sounds[i].name == "SoundFX")
             {
-                if (m_sounds[i].volume == 0)
+                if (m_sounds[i].playing == false)
                 {
-                    m_sounds[i].volume = 1;
+                    m_sounds[i].playing = true;
                     Debug.Log("sfx set to 100");
                 }
                 else
                 {
-                    m_sounds[i].volume = 0;
+                    m_sounds[i].playing = false;
                     Debug.Log("sfx set to 0");
                 }
             }
