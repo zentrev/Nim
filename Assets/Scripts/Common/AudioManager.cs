@@ -8,6 +8,9 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioMixerGroup m_music = null;
     [SerializeField] AudioMixerGroup m_sfx = null;
 
+    [SerializeField] GameObject m_MusicCrossOut = null;
+    [SerializeField] GameObject m_SFXCrossOut = null;
+
 
 	public override void Awake()
 	{
@@ -22,7 +25,9 @@ public class AudioManager : Singleton<AudioManager>
 			sound.audioSource.loop = sound.loop;
 		}
         Play("Music");
-	}
+        m_MusicCrossOut.SetActive(false);
+        m_SFXCrossOut.SetActive(false);
+    }
 
 	public void Play(string name)
 	{
@@ -58,13 +63,15 @@ public class AudioManager : Singleton<AudioManager>
                 if(m_sounds[i].playing == false)
                 {
                     m_sounds[i].playing = true;
-                    m_sounds[i].audioSource.UnPause();
+                    m_sounds[i].audioSource.Play();
+                    m_MusicCrossOut.SetActive(false);
                     Debug.Log("vol set to 1");
                 }
                 else
                 {
                     m_sounds[i].playing = false;
-                    m_sounds[i].audioSource.Pause();
+                    m_sounds[i].audioSource.Stop();
+                    m_MusicCrossOut.SetActive(true);
                     Debug.Log("vol set to 0");
                 }
             }
@@ -93,11 +100,13 @@ public class AudioManager : Singleton<AudioManager>
                 if (m_sounds[i].playing == false)
                 {
                     m_sounds[i].playing = true;
+                    m_SFXCrossOut.SetActive(false);
                     Debug.Log("sfx set to 100");
                 }
                 else
                 {
                     m_sounds[i].playing = false;
+                    m_SFXCrossOut.SetActive(true);
                     Debug.Log("sfx set to 0");
                 }
             }
