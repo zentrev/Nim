@@ -10,6 +10,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
         if (isPersistant)
         {
+            Debug.Log(Instance);
             if (Instance == null)
             {
                 Instance = this as T;
