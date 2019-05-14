@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : Singleton<SceneSwitcher>
 {
+    int gameCount = 0;
     public enum eSet
     {
         NONE,
@@ -35,17 +36,25 @@ public class SceneSwitcher : Singleton<SceneSwitcher>
             default:
                 break;
         }
+
+        if(gameCount < 8)
+        {
+            AdScript adStuff = GameObject.FindObjectOfType<AdScript>();
+            adStuff.ShowAd();
+        }
     }
 
     public void LoadScene(string level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
+        gameCount++;
     }
 
     public void LoadScene(int level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
+        gameCount++;
     }
 }
