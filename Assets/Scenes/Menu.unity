@@ -1307,7 +1307,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -1449,7 +1449,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -1836,7 +1836,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -2015,7 +2015,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -2774,7 +2774,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: ToggleSFX
           m_Mode: 1
           m_Arguments:
@@ -2785,7 +2785,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -2935,7 +2935,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247696848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ba272b652dabe409aa6536ab2aca9d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1b3e0bb0eff1234a86fe3dae5c39ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistant: 1
@@ -2960,8 +2960,6 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   m_music: {fileID: 5151290175054962871, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
   m_sfx: {fileID: 5332762678901580449, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
-  m_MusicCrossOut: {fileID: 1414308383}
-  m_SFXCrossOut: {fileID: 278069442}
 --- !u!4 &247696850
 Transform:
   m_ObjectHideFlags: 0
@@ -3092,7 +3090,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -4469,7 +4467,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -6468,7 +6466,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -6964,7 +6962,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -7632,7 +7630,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -7873,7 +7871,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -8050,7 +8048,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: ToggleMusic
           m_Mode: 1
           m_Arguments:
@@ -8061,7 +8059,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -8863,7 +8861,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -10131,7 +10129,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -11191,7 +11189,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -12233,7 +12231,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -12984,7 +12982,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -13533,7 +13531,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -13742,7 +13740,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -14831,7 +14829,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -16038,7 +16036,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -16552,7 +16550,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -16963,7 +16961,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -17488,7 +17486,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -17932,7 +17930,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
