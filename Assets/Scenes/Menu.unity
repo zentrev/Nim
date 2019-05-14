@@ -445,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
+  m_musicCross: {fileID: 1414308383}
+  m_sFXCross: {fileID: 278069442}
 --- !u!224 &21952471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1307,7 +1309,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -1449,7 +1451,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -1836,7 +1838,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -2015,7 +2017,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -2508,7 +2510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2774,20 +2776,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 21952470}
           m_MethodName: ToggleSFX
           m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 247696849}
-          m_MethodName: Play
-          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2935,7 +2926,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 247696848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ba272b652dabe409aa6536ab2aca9d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1b3e0bb0eff1234a86fe3dae5c39ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistant: 1
@@ -2960,8 +2951,6 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   m_music: {fileID: 5151290175054962871, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
   m_sfx: {fileID: 5332762678901580449, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
-  m_MusicCrossOut: {fileID: 1414308383}
-  m_SFXCrossOut: {fileID: 278069442}
 --- !u!4 &247696850
 Transform:
   m_ObjectHideFlags: 0
@@ -3092,7 +3081,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -4469,7 +4458,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -6468,7 +6457,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -6964,7 +6953,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -7632,7 +7621,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -7734,7 +7723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7873,7 +7862,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -8050,20 +8039,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 21952470}
           m_MethodName: ToggleMusic
           m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 247696849}
-          m_MethodName: Play
-          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8863,7 +8841,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -9150,7 +9128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10131,7 +10109,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -11191,7 +11169,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -12233,7 +12211,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -12984,7 +12962,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -13533,7 +13511,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -13742,7 +13720,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -14831,7 +14809,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -15590,7 +15568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -16038,7 +16016,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -16552,7 +16530,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -16963,7 +16941,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -17488,7 +17466,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 247696849}
+      - m_Target: {fileID: 0}
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -17932,7 +17910,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 247696849}
+        - m_Target: {fileID: 0}
           m_MethodName: Play
           m_Mode: 5
           m_Arguments:
@@ -18533,6 +18511,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873613337650139896, guid: 8b433a04357b91248b0cf779535b8f31,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873613337650139896, guid: 8b433a04357b91248b0cf779535b8f31,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873613337650139896, guid: 8b433a04357b91248b0cf779535b8f31,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6981132
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b433a04357b91248b0cf779535b8f31, type: 3}
