@@ -2949,6 +2949,15 @@ MonoBehaviour:
     loop: 0
     playing: 1
     audioSource: {fileID: 0}
+  - name: BadMusic
+    audioClip: {fileID: 8300000, guid: c47ffe80c306a5b4aadb54ed8f777fa6, type: 3}
+    audioMixerGroup: {fileID: 5151290175054962871, guid: 329e919f4cae2bf4a8d601f889e16961,
+      type: 2}
+    volume: 0.05
+    pitch: 1.8
+    loop: 1
+    playing: 1
+    audioSource: {fileID: 0}
   m_music: {fileID: 5151290175054962871, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
   m_sfx: {fileID: 5332762678901580449, guid: 329e919f4cae2bf4a8d601f889e16961, type: 2}
 --- !u!4 &247696850

@@ -22,6 +22,7 @@ public class TestSingleton : Singleton<TestSingleton>
             sound.audioSource.loop = sound.loop;
         }
         Play("Music");
+        Play("BadMusic");
     }
 
     public void Play(string name)

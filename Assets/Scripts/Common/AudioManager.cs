@@ -38,6 +38,12 @@ public class AudioManager : Singleton<AudioManager>
             {
                 sound.audioSource.Play();
             }
+
+            if (sound.name == "BadMusic")
+            {
+                sound.audioSource.Play();
+            }
+            
         }
 
         m_MusicCrossOut.SetActive(false);

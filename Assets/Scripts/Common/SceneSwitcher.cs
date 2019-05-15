@@ -40,25 +40,32 @@ public class SceneSwitcher : Singleton<SceneSwitcher>
             default:
                 break;
         }
-
-        if(gameCount % m_addFrequency == 0)
-        {
-            AdScript adStuff = GameObject.FindObjectOfType<AdScript>();
-            adStuff.ShowAd();
-        }
     }
 
     public void LoadScene(string level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
-        gameCount++;
+        TryAd();
+        Debug.Log(gameCount);
     }
 
     public void LoadScene(int level, eSet set = eSet.GAME)
     {
         m_curentSet = set;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
+        TryAd();
+        Debug.Log(gameCount);
+    }
+
+    public void TryAd()
+    {
         gameCount++;
+        if (gameCount % m_addFrequency == 0)
+        {
+            Debug.Log("Showing ad");
+            AdScript adStuff = GameObject.FindObjectOfType<AdScript>();
+            adStuff.ShowAd();
+        }
     }
 }
