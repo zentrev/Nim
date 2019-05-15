@@ -8,8 +8,8 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioMixerGroup m_music = null;
     [SerializeField] AudioMixerGroup m_sfx = null;
 
-    [SerializeField] GameObject m_MusicCrossOut = null;
-    [SerializeField] GameObject m_SFXCrossOut = null;
+    //[SerializeField] GameObject m_MusicCrossOut = null;
+    //[SerializeField] GameObject m_SFXCrossOut = null;
 
     bool firstLoading = true;
 
@@ -46,8 +46,8 @@ public class AudioManager : Singleton<AudioManager>
             
         }
 
-        m_MusicCrossOut.SetActive(false);
-        m_SFXCrossOut.SetActive(false);
+        //m_MusicCrossOut.SetActive(false);
+        //m_SFXCrossOut.SetActive(false);
     }
 
     public void Play(string name)
@@ -72,13 +72,13 @@ public class AudioManager : Singleton<AudioManager>
                 {
                     sound.playing = true;
                     sound.audioSource.UnPause();
-                    m_MusicCrossOut.SetActive(false);
+                    //m_MusicCrossOut.SetActive(false);
                 }
                 else
                 {
                     sound.playing = false;
                     sound.audioSource.Pause();
-                    m_MusicCrossOut.SetActive(true);
+                    //m_MusicCrossOut.SetActive(true);
                 }
             }
         }
@@ -93,12 +93,12 @@ public class AudioManager : Singleton<AudioManager>
                 if(sound.playing == false)
                 {
                     sound.playing = true;
-                    m_SFXCrossOut.SetActive(false);
+                    //m_SFXCrossOut.SetActive(false);
                 }
                 else
                 {
                     sound.playing = false;
-                    m_SFXCrossOut.SetActive(true);
+                    //m_SFXCrossOut.SetActive(true);
                 }
             }
         }
