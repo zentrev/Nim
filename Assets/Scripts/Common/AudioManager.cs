@@ -17,6 +17,7 @@ public class AudioManager : Singleton<AudioManager>
         base.Awake();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (firstLoading)
         {
             foreach (Sound sound in m_sounds)
@@ -50,6 +51,8 @@ public class AudioManager : Singleton<AudioManager>
         //m_MusicCrossOut.SetActive(false);
         //m_SFXCrossOut.SetActive(false);
 =======
+=======
+>>>>>>> parent of 68f5ba1... fixes to AudioManager
 =======
 >>>>>>> parent of 68f5ba1... fixes to AudioManager
 		foreach (Sound sound in m_sounds)
@@ -102,6 +105,7 @@ public class AudioManager : Singleton<AudioManager>
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     sound.playing = true;
                     sound.audioSource.UnPause();
                     //m_MusicCrossOut.SetActive(false);
@@ -128,11 +132,23 @@ public class AudioManager : Singleton<AudioManager>
                 else
                 {
 >>>>>>> parent of 68f5ba1... fixes to AudioManager
+=======
+                    m_sounds[i].playing = true;
+                    m_sounds[i].audioSource.Play();
+                    m_MusicCrossOut.SetActive(false);
+                    Debug.Log("vol set to 1");
+                }
+                else
+                {
+>>>>>>> parent of 68f5ba1... fixes to AudioManager
                     m_sounds[i].playing = false;
                     m_sounds[i].audioSource.Stop();
                     m_MusicCrossOut.SetActive(true);
                     Debug.Log("vol set to 0");
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 68f5ba1... fixes to AudioManager
+=======
 >>>>>>> parent of 68f5ba1... fixes to AudioManager
 =======
 >>>>>>> parent of 68f5ba1... fixes to AudioManager
@@ -164,6 +180,7 @@ public class AudioManager : Singleton<AudioManager>
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     sound.playing = true;
                     //m_SFXCrossOut.SetActive(false);
                 }
@@ -171,6 +188,17 @@ public class AudioManager : Singleton<AudioManager>
                 {
                     sound.playing = false;
                     //m_SFXCrossOut.SetActive(true);
+=======
+                    m_sounds[i].playing = true;
+                    m_SFXCrossOut.SetActive(false);
+                    Debug.Log("sfx set to 100");
+                }
+                else
+                {
+                    m_sounds[i].playing = false;
+                    m_SFXCrossOut.SetActive(true);
+                    Debug.Log("sfx set to 0");
+>>>>>>> parent of 68f5ba1... fixes to AudioManager
 =======
                     m_sounds[i].playing = true;
                     m_SFXCrossOut.SetActive(false);
