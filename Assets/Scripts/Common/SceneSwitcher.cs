@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : Singleton<SceneSwitcher>
 {
-    int gameCount = 0;
     public enum eSet
     {
         NONE,
@@ -16,7 +15,12 @@ public class SceneSwitcher : Singleton<SceneSwitcher>
     }
 
     [SerializeField] eSet m_curentSet = eSet.NONE;
+    [SerializeField] [Range(0, 10)] int m_addFrequency = 4;
+
+    int gameCount = 0;
+
     public eSet CurentSet { get => m_curentSet; set => m_curentSet = value; }
+
 
     public void SetSet(eSet set)
     {
@@ -37,7 +41,7 @@ public class SceneSwitcher : Singleton<SceneSwitcher>
                 break;
         }
 
-        if(gameCount < 8)
+        if(gameCount % m_addFrequency == 0)
         {
             AdScript adStuff = GameObject.FindObjectOfType<AdScript>();
             adStuff.ShowAd();
